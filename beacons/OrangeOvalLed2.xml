@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<beaconLight>
+    <filename>beacons/OrangeOvalLed2.i3d</filename>
+    <rootNode  node="0" />
+    <light     shaderNode="0|0" intensity="300"/>
+
+</beaconLight>
