@@ -1,0 +1,379 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<vehicle type="trailer">
+    <annotation>Ap0lLo</annotation>
+    <storeData>
+		<name>
+			<en>Hueffermann HKL-Trailer   </en>
+			<de>Hüffermann Abrollanhänger </de>
+		</name>
+        <functions>
+            <function>$l10n_function_tippers</function>
+        </functions>
+        <image>texturen/abroller.dds</image>
+        <price>28950</price>
+        <lifetime>600</lifetime>
+        <rotation>0</rotation>
+        <brand>HUEFFERMANN</brand>
+        <category>trailers</category>
+        <shopTranslationOffset>0 -0.04 0</shopTranslationOffset>
+        <shopRotationOffset>-0.77 0 0</shopRotationOffset>
+        <vertexBufferMemoryUsage>890864</vertexBufferMemoryUsage>
+        <indexBufferMemoryUsage>145554</indexBufferMemoryUsage>
+        <textureMemoryUsage>34952984</textureMemoryUsage>
+        <instanceVertexBufferMemoryUsage>0</instanceVertexBufferMemoryUsage>
+        <instanceIndexBufferMemoryUsage>0</instanceIndexBufferMemoryUsage>
+    </storeData>
+	<licensePlates>
+        <licensePlate node="0>1|0|2|3|0" position="BACK" preferedType="ELONGATED" placementArea="0.055 0.255 0.055 0.255" frame="false"/>
+    </licensePlates>
+    <base>
+        <typeDesc>$l10n_typeDesc_trailer</typeDesc>
+        <filename>i3d/Hueffermann.i3d</filename>
+        <size width="2.6" length="10" lengthOffset="1.1"/>
+		<sounds volumeFactor="1.8"/>
+       <components maxMass="45000">
+            <component centerOfMass="0.0 0.22 0.0" solverIterationCount="35" mass="2300"/>
+            <component centerOfMass="0 -0.7 0" solverIterationCount="35" mass="2300"/>
+            <component solverIterationCount="10" mass="300"/>
+			<component solverIterationCount="4" mass="80"/>
+            <joint component1="1" component2="2" node="componentJointDolly" rotLimit="0 140 0" transLimit="0 0 0"/>
+            <joint component1="2" component2="3" node="componentJointDrawbar" rotLimit="40 0 0" transLimit="0 0 0"/>
+			<joint component1="1" component2="4" node="3>1" rotLimit="45 0 0" transLimit="0 0 0" rotLimitSpring="20.0 0 0" rotLimitDamping="40.0 0 0" enableCollision="false"/>
+        </components>
+		<schemaOverlay attacherJointPosition="0 0" name="IMPLEMENT" />
+        <mapHotspot type="TRAILER" />
+    </base>
+	<wheels>
+        <wheelConfigurations>
+            <wheelConfiguration name="$l10n_configuration_valueDefault" price="0">
+                <wheels>
+                    <wheel filename="$data/shared/wheels/tires/lizard/implement/295_70R18.xml" isLeft="true" hasTireTracks="true">
+                        <physics restLoad="0.9" repr="wheelFrontLeft" forcePointRatio="0.85" initialCompression="08" suspTravel="0.13" spring="55" damper="50" mass="0.3" frictionScale="1.5"/>
+                        <additionalWheel filename="$data/shared/wheels/tires/lizard/implement/295_70R18.xml" isLeft="false" offset="0.09"/>
+                    </wheel>
+                    <wheel filename="$data/shared/wheels/tires/lizard/implement/295_70R18.xml" isLeft="false" hasTireTracks="true">
+                        <physics restLoad="0.9" repr="wheelFrontRight" forcePointRatio="0.85" initialCompression="08" suspTravel="0.13" spring="55" damper="50" mass="0.3" frictionScale="1.5"/>
+                        <additionalWheel filename="$data/shared/wheels/tires/lizard/implement/295_70R18.xml" isLeft="true" offset="0.09"/>
+                    </wheel>
+                    <wheel filename="$data/shared/wheels/tires/lizard/implement/295_70R18.xml" isLeft="true" hasTireTracks="true">
+                        <physics restLoad="0.9" repr="wheelBackLeft" forcePointRatio="0.85" initialCompression="08" suspTravel="0.13" spring="55" damper="50" mass="0.3" frictionScale="1.5"/>
+                        <additionalWheel filename="$data/shared/wheels/tires/lizard/implement/295_70R18.xml" isLeft="false" offset="0.09"/>
+                    </wheel>
+                    <wheel filename="$data/shared/wheels/tires/lizard/implement/295_70R18.xml" isLeft="false" hasTireTracks="true">
+                        <physics restLoad="0.9" repr="wheelBackRight" forcePointRatio="0.85" initialCompression="08" suspTravel="0.13" spring="55" damper="50" mass="0.3" frictionScale="1.5"/>
+                        <additionalWheel filename="$data/shared/wheels/tires/lizard/implement/295_70R18.xml" isLeft="true" offset="0.09"/>
+                    </wheel>
+                </wheels>
+            </wheelConfiguration>
+        </wheelConfigurations>
+		<hubs>
+            <color0>SHARED_BLACK1</color0>
+            <color1>SHARED_BLACK1</color1>
+            <hub linkNode="wheelFrontLeft" filename="$data/shared/wheels/hubs/hub_n10_5.xml" isLeft="true" scale="0.22 0.22 0.22"/>
+            <hub linkNode="wheelFrontRight" filename="$data/shared/wheels/hubs/hub_n10_5.xml" isLeft="false" scale="0.22 0.22 0.22"/>
+            <hub linkNode="wheelBackLeft" filename="$data/shared/wheels/hubs/hub_n10_5.xml" isLeft="true" scale="0.22 0.22 0.22"/>
+            <hub linkNode="wheelBackRight" filename="$data/shared/wheels/hubs/hub_n10_5.xml" isLeft="false" scale="0.22 0.22 0.22"/>
+            
+        </hubs>
+    </wheels>
+	
+    <rimColorConfigurations useDefaultColors="false" >
+        <rimColorConfiguration name="$l10n_ui_colorChrome" color="SHARED_WHITE2" material="3" price="3000"/>
+        <rimColorConfiguration name="$l10n_ui_colorSilver" color="SHARED_WHITE1" material="18" price="0"/>
+        <rimColorConfiguration name="$l10n_ui_colorWhite"  color="SHARED_WHITE2" material="0" price="0"/>
+        <rimColorConfiguration name="$l10n_ui_colorBlack"  color="SHARED_DA_METAL_BLACK" material="0" price="0"/>
+    </rimColorConfigurations>
+
+    <attachable>
+        <inputAttacherJoints>
+            <inputAttacherJoint node="attacherJoint" jointType="trailer" rootNode="component_drawbar" attacherHeight="2"/>
+        </inputAttacherJoints>
+        <brakeForce force="1.5" maxForce="2.5" maxForceMass="38900"/>
+    </attachable>
+	
+	 <lights>
+        <realLights>
+            <high>
+                <light node="0>1|0|2|2" lightTypes="0"/>
+				<light node="0>1|0|1|0" lightTypes="0"/>
+                <turnLightLeft node="0>1|0|1|1"/>
+                <turnLightRight node="0>1|0|1|2"/>
+                <brakeLight node="0>1|0|1|4"/>
+                <reverseLight node="0>1|0|1|3"/>
+            </high>
+        </realLights>
+        <reverseLights>
+            <reverseLight intensity="40" shaderNode="0>1|0|0|0|6|0"/>
+            <reverseLight intensity="40" shaderNode="0>1|0|0|0|7|0"/>
+        </reverseLights>
+        <defaultLights>
+			<!-- Backlight -->
+            <defaultLight shaderNode="0>1|0|0|0|0|0" lightTypes="0"/>
+			<defaultLight shaderNode="0>1|0|0|0|1|0" lightTypes="0"/>
+			<defaultLight shaderNode="0>1|0|0|0|2|0" lightTypes="0"/>
+			<defaultLight shaderNode="0>1|0|0|0|3|0" lightTypes="0"/>
+			<defaultLight shaderNode="0>1|0|0|0|4|0" lightTypes="0"/>
+			<defaultLight shaderNode="0>1|0|0|0|5|0" lightTypes="0"/>
+
+			<!-- BackSidelight -->
+            <defaultLight shaderNode="0>1|0|0|1|0" lightTypes="0" intensity="10"/>
+            <defaultLight shaderNode="0>1|0|0|1|1" lightTypes="0" intensity="10"/>
+			<defaultLight shaderNode="0>1|0|0|1|2" lightTypes="0" intensity="10"/>
+			<defaultLight shaderNode="0>1|0|0|2|0" lightTypes="0" intensity="10"/>
+            <defaultLight shaderNode="0>1|0|0|2|1" lightTypes="0" intensity="10"/>
+			<defaultLight shaderNode="0>1|0|0|2|2" lightTypes="0" intensity="10"/>
+			<defaultLight shaderNode="0>1|0|0|3|0" lightTypes="0" intensity="10"/>
+            <defaultLight shaderNode="0>1|0|0|3|1" lightTypes="0" intensity="10"/>
+			<defaultLight shaderNode="0>1|0|0|3|2" lightTypes="0" intensity="10"/>
+			<defaultLight shaderNode="0>1|0|0|4|0" lightTypes="0" intensity="10"/>
+            <defaultLight shaderNode="0>1|0|0|4|1" lightTypes="0" intensity="10"/>
+			<defaultLight shaderNode="0>1|0|0|4|2" lightTypes="0" intensity="10"/>
+			<!-- Sidelight -->
+			<defaultLight shaderNode="0>1|0|3|0|1" lightTypes="0" intensity="25"/>
+			<defaultLight shaderNode="0>1|0|3|1|1" lightTypes="0" intensity="25"/>
+			
+			<defaultLight shaderNode="0>1|0|3|2|0" lightTypes="0" intensity="25"/>
+			<defaultLight shaderNode="0>1|0|3|3|0" lightTypes="0" intensity="25"/>
+			<defaultLight shaderNode="0>1|0|3|4|0" lightTypes="0" intensity="25"/>
+			<defaultLight shaderNode="0>1|0|3|5|0" lightTypes="0" intensity="25"/>
+			<defaultLight shaderNode="0>1|0|3|6|0" lightTypes="0" intensity="25"/>
+			<defaultLight shaderNode="0>1|0|3|7|0" lightTypes="0" intensity="25"/>
+			<defaultLight shaderNode="0>1|0|3|8|0" lightTypes="0" intensity="25"/>
+			<defaultLight shaderNode="0>1|0|3|9|0" lightTypes="0" intensity="25"/>
+			<defaultLight shaderNode="0>1|0|3|10|0" lightTypes="0" intensity="25"/>
+			<defaultLight shaderNode="0>1|0|3|11|0" lightTypes="0" intensity="25"/>
+			<defaultLight shaderNode="0>1|0|3|12|0" lightTypes="0" intensity="25"/>
+			<defaultLight shaderNode="0>1|0|3|13|0" lightTypes="0" intensity="25"/>
+
+			<!-- Numberplate -->
+			<defaultLight shaderNode="0>1|0|2|0|0" lightTypes="0" intensity="25"/>
+			<defaultLight shaderNode="0>1|0|2|1|0" lightTypes="0" intensity="25"/>
+        </defaultLights>
+
+        <turnLights>
+            <turnLightLeft intensity="50" shaderNode="0>1|0|0|0|0|2"/>
+			<turnLightLeft intensity="50" shaderNode="0>1|0|0|0|1|2"/>
+			<turnLightLeft intensity="50" shaderNode="0>1|0|0|0|2|2"/>
+            <turnLightRight intensity="50" shaderNode="0>1|0|0|0|3|2"/>
+			<turnLightRight intensity="50" shaderNode="0>1|0|0|0|4|2"/>
+			<turnLightRight intensity="50" shaderNode="0>1|0|0|0|5|2"/>
+        </turnLights>
+		
+        <brakeLights>
+            <brakeLight shaderNode="0>1|0|0|0|0|1"/>
+			<brakeLight shaderNode="0>1|0|0|0|1|1"/>
+			<brakeLight shaderNode="0>1|0|0|0|2|1"/>
+			<brakeLight shaderNode="0>1|0|0|0|3|1"/>
+			<brakeLight shaderNode="0>1|0|0|0|4|1"/>
+			<brakeLight shaderNode="0>1|0|0|0|5|1"/>
+        </brakeLights>
+    </lights>
+	
+	<attacherJoints>
+        <attacherJoint node="attacherJointhook" jointType="hookLift" lowerRotLimit="0 0 0" allowsJointLimitMovement="false" allowsLowering="false" enableCollision="false">
+            <schema position="0 0.5" rotation="0" invertX="false" />
+        </attacherJoint>
+        <sounds>
+            <attach template="ATTACH_01" linkNode="0>" />
+        </sounds>
+    </attacherJoints>
+	
+	<foldable>
+        <foldingConfigurations>
+            <foldingConfiguration>
+                <foldingParts posDirectionText="Container entladen" negDirectionText="Container fixieren">
+			<foldingPart animationName="folding" speedScale="4" />
+		</foldingParts>
+            </foldingConfiguration>
+        </foldingConfigurations>
+    </foldable>
+	
+	<animations>
+        <animation name="folding">
+            <part node="attacherJointhookrot"              startTime="0" endTime="0.1" startRot="0 0 0" endRot="-90 0 0"/>
+        </animation>
+    </animations>
+
+	
+    <baseMaterial>
+        <material name="paint_platform" baseNode="trailer_platform">
+            <shaderParameter name="colorMat0" value="SHARED_WHITE1"/>
+        </material>
+        <material name="paint_chassis" baseNode="trailer_chassis">
+            <shaderParameter name="colorMat1" value="SHARED_GREY1"/>
+        </material>
+		<material name="fender1" baseNode="0>6">
+            <shaderParameter name="colorMat0" value="SHARED_WHITE1"/>
+        </material>
+		<material name="fender2" baseNode="1>4">
+            <shaderParameter name="colorMat0" value="SHARED_WHITE1"/>
+        </material>
+    </baseMaterial>
+    <baseMaterialConfigurations useDefaultColors="false">
+		<baseMaterialConfiguration name="WHITE" 				color="SHARED_WHITE2" 			material="32"  	price="1000"/>
+		<baseMaterialConfiguration name="WHITE OLD" 			color="SHARED_WHITE2" 			material="6"  	price="0"/>
+		<baseMaterialConfiguration name="WHITE MATTE"			color="SHARED_WHITE2"			material="1"  	price="1500"/>
+		<baseMaterialConfiguration name="WHITE SATIN"			color="SHARED_WHITE2"			material="27" 	price="2000"/>	
+		<baseMaterialConfiguration name="BLACK"					color="SHARED_BLACK2"			material="32"  	price="1000"/>
+		<baseMaterialConfiguration name="BLACK OLD"				color="SHARED_BLACK2"			material="6"  	price="0"/>
+		<baseMaterialConfiguration name="BLACK MATTE"			color="SHARED_BLACK2"			material="1"    price="1500"/>
+		<baseMaterialConfiguration name="BLACK SATIN"			color="SHARED_BLACK2"			material="27" 	price="2000"/>	
+        <baseMaterialConfiguration name="FLIEGL" 				color="FLIEGL_GREEN2" 			material="32"   price="1000"/> 		
+        <baseMaterialConfiguration name="FLIEGL OLD" 			color="FLIEGL_GREEN2" 			material="6"   	price="0"/> 		
+        <baseMaterialConfiguration name="FLIEGL MATTE" 			color="FLIEGL_GREEN2" 			material="1"   	price="1500"/> 	
+        <baseMaterialConfiguration name="FLIEGL SATIN" 			color="FLIEGL_GREEN2" 			material="27"  	price="2000"/> 	
+        <baseMaterialConfiguration name="GREEN" 				color="KRONE_GREEN1" 			material="32"  	price="1000"/>		
+        <baseMaterialConfiguration name="GREEN OLD" 			color="KRONE_GREEN1" 			material="6"  	price="0"/>
+		<baseMaterialConfiguration name="GREEN MATTE"			color="KRONE_GREEN1"			material="1"  	price="1500"/>
+		<baseMaterialConfiguration name="GREEN SATIN"			color="KRONE_GREEN1"			material="27" 	price="2000"/>
+	    <baseMaterialConfiguration  name="Green Blue" 			color="0.0020 0.0697 0.1275 1" 	material="32"  	price="1000"/>  			
+	    <baseMaterialConfiguration  name="Green Blue OLD" 		color="0.0020 0.0697 0.1275 1" 	material="6"  	price="0"/>  			
+	    <baseMaterialConfiguration  name="Green Blue MATTE" 		color="0.0020 0.0697 0.1275 1"  material="1"  	price="1500"/>  		
+	    <baseMaterialConfiguration  name="Green Blue SATIN" 		color="0.0020 0.0697 0.1275 1"  material="27" 	price="2000"/>  	
+		<baseMaterialConfiguration name="BLUE" 					color="NEWHOLLAND_BLUE1" 		material="32"  	price="1000"/>			
+		<baseMaterialConfiguration name="BLUE OLD" 				color="NEWHOLLAND_BLUE1"		material="6"  	price="0"/>
+		<baseMaterialConfiguration name="BLUE MATTE"			color="NEWHOLLAND_BLUE1"		material="1"  	price="1500"/>
+		<baseMaterialConfiguration name="BLUE SATIN"			color="NEWHOLLAND_BLUE1"		material="27" 	price="2000"/>
+        <baseMaterialConfiguration name="STRAUTMANN RED" 	    color="STRAUTMANN_RED1" 		material="32"  	price="1000" />
+        <baseMaterialConfiguration name="STRAUTMANN RED OLD"    color="STRAUTMANN_RED1" 		material="6"  	price="0" />
+        <baseMaterialConfiguration name="STRAUTMANN RED MATTE"  color="STRAUTMANN_RED1"			material="1"  	price="1500" />
+        <baseMaterialConfiguration name="STRAUTMANN RED SATIN"  color="STRAUTMANN_RED1" 		material="27" 	price="2000" />		
+		<baseMaterialConfiguration name="Red"					color="CASEIH_RED1" 			material="32"  	price="1000"/>		
+		<baseMaterialConfiguration name="Red OLD"				color="CASEIH_RED1" 			material="6"  	price="0"/>
+		<baseMaterialConfiguration name="RED MATTE"				color="CASEIH_RED1"				material="1"  	price="1500"/>		
+		<baseMaterialConfiguration name="RED SATIN"				color="CASEIH_RED1"				material="27" 	price="2000"/>				
+		<baseMaterialConfiguration name="YELLOW" 				color="JOHNDEERE_YELLOW1" 		material="32"  	price="1000"/>			
+		<baseMaterialConfiguration name="YELLOW OLD" 			color="JOHNDEERE_YELLOW1" 		material="6"  	price="0"/>			
+		<baseMaterialConfiguration name="YELLOW MATTE"			color="JOHNDEERE_YELLOW1"		material="1"  	price="1500"/>		
+		<baseMaterialConfiguration name="YELLOW SATIN"			color="JOHNDEERE_YELLOW1"		material="27" 	price="2000"/>			
+		<baseMaterialConfiguration name="ORANGE" 				color="STARA_ORANGE" 			material="32"  	price="1000"/>		
+		<baseMaterialConfiguration name="ORANGE OLD" 			color="STARA_ORANGE" 			material="6"  	price="0"/>		
+		<baseMaterialConfiguration name="ORANGE MATTE"			color="STARA_ORANGE"			material="1"  	price="1500"/>	
+		<baseMaterialConfiguration name="ORANGE SATIN"			color="STARA_ORANGE"			material="27" 	price="2000"/>		
+        <baseMaterialConfiguration name="Gun Metal" 	  		color="SHARED_GREY5" 			material="32"  	price="1000"/>			
+        <baseMaterialConfiguration name="Gun Metal OLD"   		color="SHARED_GREY5" 			material="6"  	price="0"/>	
+        <baseMaterialConfiguration name="Gun Metal MATTE" 		color="SHARED_GREY5" 			material="1"  	price="1500"/>		
+        <baseMaterialConfiguration name="Gun Metal SATIN" 		color="SHARED_GREY5" 			material="27" 	price="2000" isDefault="true"/>			
+		<baseMaterialConfiguration name="Deep Blue" 			color="HATZENBICHLER_DARKBLUE1"	material="32"  	price="1000"/>			
+		<baseMaterialConfiguration name="Deep Blue OLD" 		color="HATZENBICHLER_DARKBLUE1"	material="6"  	price="0"/>		
+		<baseMaterialConfiguration name="Deep Blue MATTE" 		color="HATZENBICHLER_DARKBLUE1" material="1"  	price="1500"/>	
+		<baseMaterialConfiguration name="Deep Blue STATIN" 		color="HATZENBICHLER_DARKBLUE1" material="27" 	price="2000"/>		
+        <baseMaterialConfiguration name="HAWE GREY" 			color="0.0962 0.0962 0.0962 1" 	material="32"  	price="1000"/>	
+        <baseMaterialConfiguration name="HAWE GREY OLD" 		color="0.0962 0.0962 0.0962 1"  material="6"  	price="0"/>			
+        <baseMaterialConfiguration name="HAWE GREY MATTE" 		color="0.0962 0.0962 0.0962 1"  material="1"  	price="1500"/>	
+        <baseMaterialConfiguration name="HAWE GREY SATIN" 		color="0.0962 0.0962 0.0962 1"  material="27" 	price="2000"/>	
+        <baseMaterialConfiguration name="KRONE YELLOW"  		color="KRONE_YELLOW1" 			material="32"  	price="1000"/>			
+        <baseMaterialConfiguration name="KRONE YELLOW OLD" 		color="KRONE_YELLOW1" 			material="6"  	price="0"/>	
+		<baseMaterialConfiguration name="KRONE YELLOW MATTE"	color="KRONE_YELLOW1"			material="1"  	price="1500"/>
+		<baseMaterialConfiguration name="KRONE YELLOW SATIN"	color="KRONE_YELLOW1"			material="27" 	price="2000"/>	
+        <baseMaterialConfiguration name="STAINLESS STEEL" 		color="1 1 1 8"					material="8"  	price="1000"/>
+        <baseMaterialConfiguration name="ZINC"					color="1 1 1 4"					material="4"  	price="1000"/>
+		
+        <material name="paint_platform" shaderParameter="colorMat0"/>	
+    </baseMaterialConfigurations>
+	
+	<designMaterialConfigurations price="1000" useDefaultColors="true" defaultColorIndex="7">
+		
+		<designMaterialConfiguration name="WHITE" 				color="SHARED_WHITE2" 			material="32"  	price="1000"/>
+		<designMaterialConfiguration name="WHITE OLD" 			color="SHARED_WHITE2" 			material="6"  	price="0"/>
+		<designMaterialConfiguration name="WHITE MATTE"			color="SHARED_WHITE2"			material="1"  	price="1500"/>
+		<designMaterialConfiguration name="WHITE SATIN"			color="SHARED_WHITE2"			material="27" 	price="2000"/>	
+		<designMaterialConfiguration name="BLACK"					color="SHARED_BLACK2"			material="32"  	price="1000"/>
+		<designMaterialConfiguration name="BLACK OLD"				color="SHARED_BLACK2"			material="6"  	price="0"/>
+		<designMaterialConfiguration name="BLACK MATTE"			color="SHARED_BLACK2"			material="1"    price="1500"/>
+		<designMaterialConfiguration name="BLACK SATIN"			color="SHARED_BLACK2"			material="27" 	price="2000"/>	
+        <designMaterialConfiguration name="FLIEGL" 				color="FLIEGL_GREEN2" 			material="32"   price="1000"/> 		
+        <designMaterialConfiguration name="FLIEGL OLD" 			color="FLIEGL_GREEN2" 			material="6"   	price="0"/> 		
+        <designMaterialConfiguration name="FLIEGL MATTE" 			color="FLIEGL_GREEN2" 			material="1"   	price="1500"/> 	
+        <designMaterialConfiguration name="FLIEGL SATIN" 			color="FLIEGL_GREEN2" 			material="27"  	price="2000"/> 	
+        <designMaterialConfiguration name="GREEN" 				color="KRONE_GREEN1" 			material="32"  	price="1000"/>		
+        <designMaterialConfiguration name="GREEN OLD" 			color="KRONE_GREEN1" 			material="6"  	price="0"/>
+		<designMaterialConfiguration name="GREEN MATTE"			color="KRONE_GREEN1"			material="1"  	price="1500"/>
+		<designMaterialConfiguration name="GREEN SATIN"			color="KRONE_GREEN1"			material="27" 	price="2000"/>
+	    <designMaterialConfiguration  name="Green Blue" 			color="0.0020 0.0697 0.1275 1" 	material="32"  	price="1000"/>  			
+	    <designMaterialConfiguration  name="Green Blue OLD" 		color="0.0020 0.0697 0.1275 1" 	material="6"  	price="0"/>  			
+	    <designMaterialConfiguration  name="Green Blue MATTE" 		color="0.0020 0.0697 0.1275 1"  material="1"  	price="1500"/>  		
+	    <designMaterialConfiguration  name="Green Blue SATIN" 		color="0.0020 0.0697 0.1275 1"  material="27" 	price="2000"/>  	
+		<designMaterialConfiguration name="BLUE" 					color="NEWHOLLAND_BLUE1" 		material="32"  	price="1000"/>			
+		<designMaterialConfiguration name="BLUE OLD" 				color="NEWHOLLAND_BLUE1"		material="6"  	price="0"/>
+		<designMaterialConfiguration name="BLUE MATTE"			color="NEWHOLLAND_BLUE1"		material="1"  	price="1500"/>
+		<designMaterialConfiguration name="BLUE SATIN"			color="NEWHOLLAND_BLUE1"		material="27" 	price="2000"/>
+        <designMaterialConfiguration name="STRAUTMANN RED" 	    color="STRAUTMANN_RED1" 		material="32"  	price="1000" />
+        <designMaterialConfiguration name="STRAUTMANN RED OLD"    color="STRAUTMANN_RED1" 		material="6"  	price="0" />
+        <designMaterialConfiguration name="STRAUTMANN RED MATTE"  color="STRAUTMANN_RED1"			material="1"  	price="1500" />
+        <designMaterialConfiguration name="STRAUTMANN RED SATIN"  color="STRAUTMANN_RED1" 		material="27" 	price="2000" />		
+		<designMaterialConfiguration name="Red"					color="CASEIH_RED1" 			material="32"  	price="1000"/>		
+		<designMaterialConfiguration name="Red OLD"				color="CASEIH_RED1" 			material="6"  	price="0"/>
+		<designMaterialConfiguration name="RED MATTE"				color="CASEIH_RED1"				material="1"  	price="1500"/>		
+		<designMaterialConfiguration name="RED SATIN"				color="CASEIH_RED1"				material="27" 	price="2000"/>				
+		<designMaterialConfiguration name="YELLOW" 				color="JOHNDEERE_YELLOW1" 		material="32"  	price="1000"/>			
+		<designMaterialConfiguration name="YELLOW OLD" 			color="JOHNDEERE_YELLOW1" 		material="6"  	price="0"/>			
+		<designMaterialConfiguration name="YELLOW MATTE"			color="JOHNDEERE_YELLOW1"		material="1"  	price="1500"/>		
+		<designMaterialConfiguration name="YELLOW SATIN"			color="JOHNDEERE_YELLOW1"		material="27" 	price="2000"/>			
+		<designMaterialConfiguration name="ORANGE" 				color="STARA_ORANGE" 			material="32"  	price="1000"/>		
+		<designMaterialConfiguration name="ORANGE OLD" 			color="STARA_ORANGE" 			material="6"  	price="0"/>		
+		<designMaterialConfiguration name="ORANGE MATTE"			color="STARA_ORANGE"			material="1"  	price="1500"/>	
+		<designMaterialConfiguration name="ORANGE SATIN"			color="STARA_ORANGE"			material="27" 	price="2000"/>		
+        <designMaterialConfiguration name="Gun Metal" 	  		color="SHARED_GREY5" 			material="32"  	price="1000"/>			
+        <designMaterialConfiguration name="Gun Metal OLD"   		color="SHARED_GREY5" 			material="6"  	price="0"/>	
+        <designMaterialConfiguration name="Gun Metal MATTE" 		color="SHARED_GREY5" 			material="1"  	price="1500"/>		
+        <designMaterialConfiguration name="Gun Metal SATIN" 		color="SHARED_GREY5" 			material="27" 	price="2000" isDefault="true"/>			
+		<designMaterialConfiguration name="Deep Blue" 			color="HATZENBICHLER_DARKBLUE1"	material="32"  	price="1000"/>			
+		<designMaterialConfiguration name="Deep Blue OLD" 		color="HATZENBICHLER_DARKBLUE1"	material="6"  	price="0"/>		
+		<designMaterialConfiguration name="Deep Blue MATTE" 		color="HATZENBICHLER_DARKBLUE1" material="1"  	price="1500"/>	
+		<designMaterialConfiguration name="Deep Blue STATIN" 		color="HATZENBICHLER_DARKBLUE1" material="27" 	price="2000"/>		
+        <designMaterialConfiguration name="HAWE GREY" 			color="0.0962 0.0962 0.0962 1" 	material="32"  	price="1000"/>	
+        <designMaterialConfiguration name="HAWE GREY OLD" 		color="0.0962 0.0962 0.0962 1"  material="6"  	price="0"/>			
+        <designMaterialConfiguration name="HAWE GREY MATTE" 		color="0.0962 0.0962 0.0962 1"  material="1"  	price="1500"/>	
+        <designMaterialConfiguration name="HAWE GREY SATIN" 		color="0.0962 0.0962 0.0962 1"  material="27" 	price="2000"/>	
+        <designMaterialConfiguration name="KRONE YELLOW"  		color="KRONE_YELLOW1" 			material="32"  	price="1000"/>			
+        <designMaterialConfiguration name="KRONE YELLOW OLD" 		color="KRONE_YELLOW1" 			material="6"  	price="0"/>	
+		<designMaterialConfiguration name="KRONE YELLOW MATTE"	color="KRONE_YELLOW1"			material="1"  	price="1500"/>
+		<designMaterialConfiguration name="KRONE YELLOW SATIN"	color="KRONE_YELLOW1"			material="27" 	price="2000"/>	
+        <designMaterialConfiguration name="STAINLESS STEEL" 		color="1 1 1 8"					material="8"  	price="1000"/>
+        <designMaterialConfiguration name="ZINC"					color="1 1 1 4"					material="4"  	price="1000"/>
+		<material name="paint_chassis" shaderParameter="colorMat1"/>
+		<material name="fender1" shaderParameter="colorMat0"/>
+		<material name="fender2" shaderParameter="colorMat0"/>
+    </designMaterialConfigurations>
+	<connectionHoses>
+        <hose inputAttacherJointIndices="1" type="airDoubleRed" node="red" length="3.5" diameter="0.02" minCenterPointOffset="0 0 0.4" maxCenterPointOffset="0 0 2" straighteningFactor="2" isTwoPointHose="false" outgoingAdapter="DEFAULT" />
+        <hose inputAttacherJointIndices="1" type="airDoubleYellow" node="yellow" length="3.5" diameter="0.02" minCenterPointOffset="0 0 0.4" maxCenterPointOffset="0 0 2" straighteningFactor="2" isTwoPointHose="false" outgoingAdapter="DEFAULT" />
+        <hose inputAttacherJointIndices="1" type="hydraulicIn" node="hydraulicIn02" length="3.5" diameter="0.02" minCenterPointOffset="0 0 0.4" maxCenterPointOffset="0 0 2" straighteningFactor="2" isTwoPointHose="false" outgoingAdapter="DEFAULT" />
+		<hose inputAttacherJointIndices="1" type="hydraulicOut" node="hydraulicOut02" length="3.5" diameter="0.02" minCenterPointOffset="0 0 0.4" maxCenterPointOffset="0 0 2" straighteningFactor="2" isTwoPointHose="false" outgoingAdapter="DEFAULT" />
+        <hose inputAttacherJointIndices="1" type="electric" node="electricFront" length="3.5" diameter="0.02" minCenterPointOffset="0 0 0.4" maxCenterPointOffset="0 0 2" straighteningFactor="2" isTwoPointHose="false" outgoingAdapter="DEFAULT" />
+    </connectionHoses>
+
+    <wearable wearDuration="480" workMultiplier="5" fieldMultiplier="2"/>
+    <washable dirtDuration="90" washDuration="1" workMultiplier="3" fieldMultiplier="2"/>
+    <i3dMappings>
+		<!-- ANIMATIONS -->
+		<i3dMapping id="attacherJointhook" node="0>10|0"/>
+		<i3dMapping id="attacherJointhookrot" node="0>10"/>
+		<!-- COMPONENTS -->
+        <i3dMapping id="componentJointDolly" node="0>2"/>
+        <i3dMapping id="trailer_chassis" node="0>4"/>
+        <i3dMapping id="plastics" node="0>6"/>
+        <i3dMapping id="trailer_platform" node="0>17|1"/>
+        <i3dMapping id="trailer_dolly" node="1>2"/>
+        <i3dMapping id="dolly_plastics" node="1>2"/>
+        <i3dMapping id="trailer_drawbar" node="2>1"/>
+        <i3dMapping id="component_chassis" node="0>"/>
+        <i3dMapping id="component_dolly" node="1>"/>
+        <i3dMapping id="component_drawbar" node="2>"/>
+        <i3dMapping id="attacherJoint" node="2>0"/>
+        <i3dMapping id="componentJointDrawbar" node="1>1"/>
+		<!-- WHEELS -->
+        <i3dMapping id="wheelBackLeft" node="0>0|0"/>
+        <i3dMapping id="wheelBackRight" node="0>0|1"/>
+        <i3dMapping id="wheelFrontLeft" node="1>0|0"/>
+        <i3dMapping id="wheelFrontRight" node="1>0|1"/>
+		
+		<i3dMapping id="electricFront" node="0>18|0|0"/>
+        <i3dMapping id="red" node="0>18|4|0"/>
+        <i3dMapping id="yellow" node="0>18|3|0"/>
+        <i3dMapping id="hydraulicIn02" node="0>18|1|0"/>	
+		<i3dMapping id="hydraulicOut02" node="0>18|2|0"/>
+
+    </i3dMappings>
+</vehicle>

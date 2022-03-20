@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<vehicle type="hookLiftContainerTrailerBarrel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://validation.gdn.giants-software.com/xml/fs22/vehicle.xsd">
+    <annotation>Copyright (C) GIANTS Software GmbH, All Rights Reserved.</annotation>
+
+    <storeData>
+        <name>
+			<en>Slurry container</en>
+            <de>Güllecontainer</de>
+		</name>
+        <specs>
+            <neededPower>140</neededPower>
+            <workingWidth>12</workingWidth>
+        </specs>
+        <functions>
+            <function>$l10n_function_hookLiftContainer</function>
+            <function>$l10n_function_slurrySpreader</function>
+        </functions>
+		<specs>
+            <combination>ITR 26.33 HD</combination>
+        </specs>
+        <image>texturen/store_containerSlurry.png</image>
+        <price>34000</price>
+        <lifetime>600</lifetime>
+        <rotation>0</rotation>
+        <brand>ITRUNNER</brand>
+        <category>slurryTanks</category>
+    </storeData>
+
+    <base>
+        <typeDesc>$l10n_typeDesc_manureBarrel</typeDesc>
+        <filename>i3d/containerSlurry.i3d</filename>
+        <size width="3.5" length="8.5" lengthOffset="0.3"/>
+        <components>
+            <component centerOfMass="0 0.2 0" solverIterationCount="10" mass="2600"/>
+        </components>
+        <schemaOverlay attacherJointPosition="0 0" name="IMPLEMENT" />
+        <speedLimit value="17"/>
+    </base>
+
+    <wheels>
+        <wheelConfigurations>
+            <wheelConfiguration>
+                <wheels autoRotateBackSpeed="2.0">
+                    <wheel>
+                        <physics tipOcclusionAreaGroupId="1" restLoad="1.0" repr="wheelLeft" radius="0.085" width="0.5" mass="0.02" initialCompression="50" suspTravel="0.05" spring="300" damper="100" frictionScale="0.8"/>
+                    </wheel>
+                    <wheel>
+                        <physics tipOcclusionAreaGroupId="1" restLoad="1.0" repr="wheelRight" radius="0.085" width="0.5" mass="0.02" initialCompression="50" suspTravel="0.05" spring="300" damper="100" frictionScale="0.8"/>
+                    </wheel>
+                </wheels>
+            </wheelConfiguration>
+        </wheelConfigurations>
+    </wheels>
+
+    <attachable>
+        <inputAttacherJoints>
+            <inputAttacherJoint node="attacherJoint" jointType="hookLift" allowsJointRotLimitMovement="false" forceSelectionOnAttach="false" upperRotationOffset="0"/>
+        </inputAttacherJoints>
+    </attachable>
+
+    <powerConsumer ptoRpm="450" neededMinPtoPower="30" neededMaxPtoPower="30" />
+	
+    <workAreas>
+        <workArea type="sprayer" functionName="processSprayerArea" disableBackwards="false" requiresGroundContact="false">
+            <area startNode="workAreaStart" widthNode="workAreaWidth" heightNode="workAreaHeight" />
+            <onlyActiveWhenLowered value="false"/>
+        </workArea>
+    </workAreas>
+	
+	<sprayer activateOnLowering="true">
+        <usageScales workingWidth="12" scale="1"/>
+
+        <effects>
+            <effectNode effectClass="SlurrySideToSideEffect" effectNode="effectSlurry" materialType="slurrySideToSide" fadeOutTime="2" fadeInTime="2" refAnimation="sprayerAnimation" />
+        </effects>
+    </sprayer>
+
+    <animations>
+        <animation name="sprayerAnimation" looping="true">
+            <part node="spreader" startTime="0" endTime="0.5" startRot="0 -40 0" endRot="0 40 0"/>
+            <part node="spreader" startTime="0.5" endTime="1.0" startRot="0 40 0" endRot="0 -40 0"/>
+        </animation>
+        <animation name="fillLevelDisplay">
+            <part node="fillMeter" startTime="0.0" endTime="1.0" startRot="0 0 -50" endRot="0 0 50" />
+        </animation>
+    </animations>
+
+    <fillUnit>
+        <fillUnitConfigurations>
+            <fillUnitConfiguration>
+                <fillUnits>
+                    <fillUnit shopDisplayUnit="CUBICMETER" fillTypeCategories="slurryTank" capacity="15000" >
+                        <exactFillRootNode node="exactFillRootNode"/>
+                        <dashboard displayType="ANIMATION" valueType="fillLevel" animName="fillLevelDisplay"/>
+                    </fillUnit>
+					<fillTrigger consumePtoPower="true" litersPerSecond="500"/>
+                </fillUnits>
+            </fillUnitConfiguration>
+        </fillUnitConfigurations>
+		
+		<sounds>
+            <fill template="SLURRY_01" />
+        </sounds>
+    </fillUnit>
+
+    <fillTriggerVehicle triggerNode="fillTrigger" fillUnitIndex="1" litersPerSecond="500"/>
+
+    <dischargeable requiresTipOcclusionArea="false">
+        <dischargeNode node="dischargeNode" emptySpeed="775" fillUnitIndex="1" allowAIDischarge="true" canDischargeToGround="false">
+            <info width="1.0" length="0.5" zOffset="0.4" />
+            <trigger node="dischargeTrigger" />
+            <dischargeSound template="SLURRY_01"/>
+        </dischargeNode>
+    </dischargeable>
+
+    <turnOnVehicle turnOffIfNotAllowed="true">
+        <turnedOnAnimation name="sprayerAnimation"/>
+        <activatableFillUnits>
+            <activatableFillUnit index="1" />
+        </activatableFillUnits>
+
+        <sounds>
+            <work template="SLURRY_01">
+                <pitch indoor="0.75" outdoor="0.75" />
+            </work>
+        </sounds>
+    </turnOnVehicle>
+
+    <foliageBending>
+        <bendingNode minX="-1.35" maxX="1.35" minZ="-3.5" maxZ="4.1" yOffset="0.2"/>
+    </foliageBending>
+
+    <baseMaterial>
+        <material name="containerSlurry_mat" baseNode="containerSlurry_vis">
+            <shaderParameter name="colorMat1" value="ITRUNNER_WHITE1"/>
+        </material>
+    </baseMaterial>
+
+	<baseMaterialConfigurations price="500" useDefaultColors="true" defaultColorIndex="15">
+		<baseMaterialConfiguration name="Frozen Bluestone metallic"  color="1 1 1" material="9"/>
+	    <baseMaterialConfiguration name="Pyritsilber Metallic"  color="0.361 0.388 0.412" material="9"/>		
+		<baseMaterialConfiguration name="Saphierschwaz metallic"  color="0.1 0.1 0.1" material="9"/>
+        <baseMaterialConfiguration name="Carbonschwarz metallic"  color="0.04 0.04 0.05" material="9"/>		
+        <baseMaterialConfiguration name="Aventurinrot metallic"  color="0.15 0.005 0.01" material="9"/>		
+        <baseMaterialConfiguration name="Performace green"  color="0.008 0.024 0.008" material="9"/>		
+		<baseMaterialConfiguration name="Pearl White"  color="STOLL_WHITE2" material="27"/>
+        <baseMaterialConfiguration name="Orange Metallic" color="FIAT_ORANGEPAINT" material="27" />
+		<baseMaterialConfiguration name="Blau Metallic 1"  color="0.01 0.1 1" material="27" />
+		<baseMaterialConfiguration name="Blue matt metallic"  color="0 0.2 0.8" material="18"/>
+		<baseMaterialConfiguration name="Black matt metallic"  color="0.05 0.05 0.05" material="18"/>		
+        <baseMaterialConfiguration name="Gun Metal"  color="SHARED_GREY5" material="32"/>
+        <baseMaterialConfiguration name="Glanz Grau" color="0.02 0.02 0.02" material="32"/>		
+		<baseMaterialConfiguration name="GREEN3"  color="ZUNHAMMER_GREEN3" material="32"/>
+        <baseMaterialConfiguration name="VICON DARKBLUE" color="VICON_DARKBLUE"material="32"/>
+		
+        <material name="containerSlurry_mat" shaderParameter="colorMat1" />
+    </baseMaterialConfigurations>
+    <wearable wearDuration="480" workMultiplier="5" fieldMultiplier="2"/>
+    <washable dirtDuration="90" washDuration="1" workMultiplier="3" fieldMultiplier="2"/>
+    
+	<ai>
+        <allowTurnBackward value="false"/>
+        <areaMarkers leftNode="aiMarkerLeft" rightNode="aiMarkerRight" backNode="aiMarkerBack" />
+    </ai>
+
+    <i3dMappings>
+        <i3dMapping id="containerSlurry_vis" 	node="0>0"/>
+        <i3dMapping id="wheelLeft" 				node="0>0|0|0"/>
+        <i3dMapping id="wheelRight" 			node="0>0|0|1"/>
+        <i3dMapping id="attacherJoint" 			node="0>0|1"/>
+        <i3dMapping id="spreader" 				node="0>0|2"/>
+        <i3dMapping id="effectSlurry" 			node="0>0|2|0|0"/>
+        <i3dMapping id="effectNode" 			node="0>0|3"/>
+        <i3dMapping id="exactFillRootNode" 		node="0>0|4|0"/>
+        <i3dMapping id="fillTrigger" 			node="0>0|4|1"/>
+        <i3dMapping id="dischargeTrigger" 		node="0>0|4|2"/>
+        <i3dMapping id="dischargeNode" 			node="0>0|4|3"/>
+        <i3dMapping id="fillMeter" 				node="0>0|4|4"/>
+        <i3dMapping id="workAreaStart" 			node="0>0|5|0"/>
+        <i3dMapping id="workAreaWidth" 			node="0>0|5|1"/>
+        <i3dMapping id="workAreaHeight" 		node="0>0|5|2"/>
+        <i3dMapping id="aiMarkerLeft" 			node="0>0|5|3"/>
+        <i3dMapping id="aiMarkerRight" 			node="0>0|5|4"/>
+        <i3dMapping id="aiMarkerBack" 			node="0>0|5|5"/>
+    </i3dMappings>
+
+</vehicle>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<l10n>
+    <translationContributors>Wobby</translationContributors>
+    <texts>
+        <text name="load_container" text="Container aufladen"/>
+        <text name="unload_container" text="Container absetzen"/>
+        <text name="load_arm" text="Arm anheben"/>
+        <text name="unload_arm" text="Arm absenken"/>
+		<text name="function_hookLift" text="Hakenlift zur Aufnahme von Containern"/>        
+		
+		<text name="input_CHANGE_UNLOADING_TYPE_BUTTON" text="Abstellart ändern"/>
+        <text name="input_CHANGE_CONTAINER_SIZE_BUTTON" text="Containergröße wechseln" />    
+		<text name="UNLOAD_TO_TRAILER_IS_ACTIVE" text="Aktuelle Abstellart: Anhänger"/>       
+		<text name="UNLOAD_TO_GROUND_IS_ACTIVE" text="Aktuelle Abstellart: Boden"/>   
+        <text name="CONTAINER_SIZE_BIG" text="Aktuelle Containergröße: Lang" />
+		<text name="CONTAINER_SIZE_SMALL" text="Aktuelle Containergröße: Kurz" />    
+    </texts>
+</l10n>

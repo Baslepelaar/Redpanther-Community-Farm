@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<vehicle type="hookLiftContainerTrailerBarrel">
+    <annotation>Copyright (C) GIANTS Software GmbH, All Rights Reserved.</annotation>
+    <storeData>
+        <name>
+            <en>Hooklift liquid Container</en></name>
+        <functions>
+            <function>$l10n_function_tank</function>
+            <function>$l10n_function_hookLiftContainer</function>
+        </functions>
+        <image>Store/storeLI.dds</image>
+        <price>12000</price>
+        <lifetime>600</lifetime>
+        <rotation>0</rotation>
+        <brand>LIZARD</brand>
+        <category>animals</category>
+        <shopTranslationOffset>0 0 0</shopTranslationOffset>
+        <shopRotationOffset>0 0 0</shopRotationOffset>
+        <vertexBufferMemoryUsage>1280624</vertexBufferMemoryUsage>
+        <indexBufferMemoryUsage>215916</indexBufferMemoryUsage>
+        <textureMemoryUsage>4631568</textureMemoryUsage>
+        <instanceVertexBufferMemoryUsage>0</instanceVertexBufferMemoryUsage>
+        <instanceIndexBufferMemoryUsage>0</instanceIndexBufferMemoryUsage>
+    </storeData>
+    <base>
+        <typeDesc>$l10n_typeDesc_trailer</typeDesc>
+        <filename>i3d/LiquidTank.i3d</filename>
+        <size width="3" length="7.5" lengthOffset="1"/>
+        <components>
+            <component centerOfMass="0 0.2 0" solverIterationCount="10" mass="2000"/>
+        </components>
+        <schemaOverlay attacherJointPosition="0 0" name="IMPLEMENT" />
+        <speedLimit value="17"/>
+    </base>
+	<wheels>
+        <wheelConfigurations>
+            <wheelConfiguration>
+                <wheels autoRotateBackSpeed="2.0">
+                    <wheel>
+                        <physics restLoad="1.0" repr="0>1|4|0|0" width="0.3" radius="0.085" mass="0.02" initialCompression="50" suspTravel="0.05" spring="300" damper="100" maxLatStiffness="300" frictionScale="0.35"/>
+                    </wheel>
+                    <wheel>
+                        <physics restLoad="1.0" repr="0>1|4|0|1" width="0.3" radius="0.085" mass="0.02" initialCompression="50" suspTravel="0.05" spring="300" damper="100" maxLatStiffness="300" frictionScale="0.35"/>
+                    </wheel>
+                </wheels>
+            </wheelConfiguration>
+        </wheelConfigurations>
+    </wheels>
+	<attachable>
+        <inputAttacherJoints>
+            <inputAttacherJoint node="0>1|3" jointType="hookLift" upperRotationOffset="0" allowsJointRotLimitMovement="false" forceSelectionOnAttach="false"/>
+        </inputAttacherJoints>
+    </attachable>
+
+
+    <fillUnit>
+        <fillUnitConfigurations>
+            <fillUnitConfiguration>
+                <fillUnits>
+					<fillUnit unitTextOverride="$l10n_unit_literShort" fillTypes="MILK WATER LIQUIDFERTILIZER LIQUIDMANURE DIGESTATE HERBICIDE DIESEL" capacity="16000">
+                        <exactFillRootNode node="exactFillRootNode" />
+                    </fillUnit>
+					<fillTrigger consumePtoPower="true"/>
+                </fillUnits>
+            </fillUnitConfiguration>
+        </fillUnitConfigurations>
+		<sounds>
+            <fill template="SLURRY_01" />
+        </sounds>
+    </fillUnit>
+    <fillTriggerVehicle triggerNode="fillTrigger" fillUnitIndex="1" litersPerSecond="800"/>
+    <dischargeable>
+        <dischargeNode node="dischargeNode" emptySpeed="800" fillUnitIndex="1" canDischargeToGround="false">
+            <info width="1.0" length="0.5" zOffset="0.4"/>
+            <trigger node="dischargeTrigger"/>
+			<dischargeSound template="SLURRY_01"/>
+        </dischargeNode>
+    </dischargeable>
+    <waterTrailer fillUnitIndex="1" fillLitersPerSecond="800" fillNode="mks8_main_component1">
+        <sounds>
+            <refill template="DEFAULT_REFUEL_SOUND" linkNode="0>"/>
+        </sounds>
+    </waterTrailer>
+	<powerConsumer ptoRpm="300" neededMinPtoPower="30" neededMaxPtoPower="30" />
+	<baseMaterial>
+        <material name="UDIM" baseNode="mks8_vis">
+            <shaderParameter name="colorMat0" value="0.6 0.6 0.6 0"/>
+			<shaderParameter name="colorMat1" value="0.02 0.02 0.02 6"/>
+        </material>        
+		<material name="lambert1" baseNode="HKLchassi_vis">
+            <shaderParameter name="colorMat0" value="0.02 0.02 0.02 6"/>
+			<shaderParameter name="colorMat1" value="0.02 0.02 0.02 6"/>
+        </material>			
+    </baseMaterial>
+
+	<baseMaterialConfigurations price="1000" useDefaultColors="false" defaultColorIndex="0">
+        <baseMaterialConfiguration name="Chrome" material="2" color="0.8 0.8 0.8 2"/>
+		<baseMaterialConfiguration name="MAN D38 RED" color="0.437 0.000 0.000 0" material="0" price="3000"/>
+        <baseMaterialConfiguration name="Stainless Steel" material="8" color="0.55 0.55 0.55 8"/>
+        <baseMaterialConfiguration name="Galvanized Metal" material="4" color="0.6 0.6 0.6 4"/>
+        <baseMaterialConfiguration material="0"	 color="0.027 0.025 0.023 1" />
+        <baseMaterialConfiguration material="0"  color="0.1413 0.1413 0.1413 0" />
+        <baseMaterialConfiguration material="0"  color="1.000 0.964 0.127 0" />
+        <baseMaterialConfiguration material="0"  color="0.776 0.156 0.041 0" />
+        <baseMaterialConfiguration material="0"  color="0.451 0.025 0.017 0" />
+        <baseMaterialConfiguration material="0"  color="0.105 0.009 0.006 0" />
+        <baseMaterialConfiguration material="0"  color="0.171 0.314 0.552 0" />
+        <baseMaterialConfiguration material="0"  color="0.001 0.006 0.117 0" />
+        <baseMaterialConfiguration material="0"  color="0.004 0.003 0.031 0" />
+        <baseMaterialConfiguration material="0"  color="0.178 0.029 0.397 0" />
+        <baseMaterialConfiguration material="0"  color="0.104 0.402 0.051 0" />
+        <baseMaterialConfiguration material="0"  color="0.035 0.125 0.048 0" />
+        <baseMaterialConfiguration material="0"  color="0.016 0.055 0.026 0" />
+        <baseMaterialConfiguration material="0"  color="0.768 0.545 0.219 0" />
+        <baseMaterialConfiguration material="0"  color="0.168 0.068 0.030 0" />		
+		<material name="UDIM" shaderParameter="colorMat0"/>
+    </baseMaterialConfigurations>
+	
+ 	<designMaterialConfigurations price="1000" useDefaultColors="true" defaultColorIndex="0">
+        <designMaterialConfiguration name="Black" color="0.02 0.02 0.02" material="6"/>
+		<!--
+		<material name="lambert1" shaderParameter="colorMat0" />
+		<material name="lambert1" shaderParameter="colorMat1" />
+		-->
+		<material name="UDIM" shaderParameter="colorMat1" />
+    </designMaterialConfigurations>	
+	
+	
+	
+	
+	
+	
+	
+	
+    <wearable wearDuration="480" workMultiplier="5" fieldMultiplier="2"/>
+    <washable dirtDuration="90" washDuration="1" workMultiplier="2" fieldMultiplier="2"/>
+    <i3dMappings>
+        <i3dMapping id="mks8_main_component1" node="0>"/>
+        <i3dMapping id="mks8_vis" node="0>0"/>
+        <i3dMapping id="HKLchassi_vis" node="0>1|0"/>
+        <i3dMapping id="wheelBackLeft" node="0>0|0|0"/>
+        <i3dMapping id="wheelBackRight" node="0>0|0|1"/>
+		<i3dMapping id="attacherJointhook" node="0>5" />
+        <i3dMapping id="flap01" node="0>0|0|0"/>
+        <i3dMapping id="flap02" node="0>0|0|1"/>
+        <i3dMapping id="flap03" node="0>0|0|2"/>
+        <i3dMapping id="exactFillRootNode" node="0>0|1|0"/>
+        <i3dMapping id="fillTrigger" node="0>2"/>
+        <i3dMapping id="dischargeNode" node="0>0|1|1"/>
+        <i3dMapping id="dischargeTrigger" node="0>3"/>
+    </i3dMappings>
+</vehicle>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<l10n>
+    <translationContributors>Wobby</translationContributors>
+    <texts>
+        <text name="Scania Crane and HookLift" text="Scania Crane and HookLift"/>
+        <text name="controlGroup_cabin" text="Cabin Function (mouse control)"/>
+        <text name="controlGroup_crane" text="Crane (mouse control)"/>
+        <text name="controlGroup_frontarm" text="hooklift arm"/>
+        <text name="3Axles" text="3 axes"/>
+        <text name="2Axles" text="2 axes"/>
+        <text name="function_hookLift" text="HookLifts can use with different Containers"/>
+        <text name="load_container" text="load container"/>
+        <text name="unload_container" text="unload container"/>
+        <text name="load_arm" text="move arm up"/>
+        <text name="unload_arm" text="move arm down"/>
+        <text name="function_truck" text="Truck also to connect with trailers"/>
+		<text name="function_hookLift" text="Hooklift to use with Containers"/>
+
+        <text name="input_CHANGE_CONTAINER_SIZE_BUTTON" text="change container size" /> 
+        <text name="input_CHANGE_UNLOADING_TYPE_BUTTON" text="change unloading type" />
+        <text name="UNLOAD_TO_TRAILER_IS_ACTIVE" text="current unloading type: trailer" />
+		<text name="UNLOAD_TO_GROUND_IS_ACTIVE" text="current unloading type: ground" />
+        <text name="CONTAINER_SIZE_BIG" text="current container size: big" />
+		<text name="CONTAINER_SIZE_SMALL" text="current container size: small" />      
+    </texts>
+</l10n>

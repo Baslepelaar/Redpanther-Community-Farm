@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<vehicle type="hookLiftContainerTrailer" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://validation.gdn.giants-software.com/xml/fs22/vehicle.xsd">
+    <annotation>Copyright (C) GIANTS Software GmbH, All Rights Reserved.</annotation>
+
+    <storeData>
+        <name>HT 50</name>
+        <functions>
+            <function>$l10n_function_hookLiftContainer</function>
+        </functions>
+		<specs>
+            <combination>ITR 26.33 HD</combination>
+        </specs>
+        <image>texturen/store_containerChaff.png"</image>
+        <price>28000</price>
+        <lifetime>600</lifetime>
+        <rotation>0</rotation>
+        <brand>BERGMANN</brand>
+        <category>trailers</category>
+    </storeData>
+
+    <base>
+        <typeDesc>$l10n_typeDesc_container</typeDesc>
+        <filename>i3d/containerChaff.i3d</filename>
+        <size width="3.5" length="8.5"/>
+        <components>
+            <component centerOfMass="0 0.2 0" solverIterationCount="10" mass="4500"/>
+        </components>
+        <schemaOverlay attacherJointPosition="0 0" name="IMPLEMENT" />
+    </base>
+	
+	<licensePlates>
+        <licensePlate node="licensePlateNodeBack" position="BACK" preferedType="SQUARISH" placementArea="0.11 0.19 0.11 0.15"/>
+    </licensePlates>
+
+    <wheels>
+        <wheelConfigurations>
+            <wheelConfiguration>
+                <wheels autoRotateBackSpeed="2.0">
+                    <wheel>
+                        <physics tipOcclusionAreaGroupId="1" restLoad="1.0" repr="wheelLeft" radius="0.085" width="0.5" mass="0.02" initialCompression="50" suspTravel="0.05" spring="300" damper="100" frictionScale="0.8"/>
+                    </wheel>
+                    <wheel>
+                        <physics tipOcclusionAreaGroupId="1" restLoad="1.0" repr="wheelRight" radius="0.085" width="0.5" mass="0.02" initialCompression="50" suspTravel="0.05" spring="300" damper="100" frictionScale="0.8"/>
+                    </wheel>
+                </wheels>
+            </wheelConfiguration>
+        </wheelConfigurations>
+    </wheels>
+
+    <attachable>
+        <inputAttacherJoints>
+            <inputAttacherJoint node="attacherJoint" jointType="hookLift" allowsJointRotLimitMovement="false" forceSelectionOnAttach="false" upperRotationOffset="0"/>
+        </inputAttacherJoints>
+    </attachable>
+
+    <lights>
+        <realLights>
+            <high>
+                <light 			node="backLightsHigh1" 			lightTypes="0"/>
+				<light 			node="licensePlateLightHigh" 	lightTypes="0"/>
+                <turnLightLeft 	node="turnLightLeftBack"/>
+                <turnLightRight node="turnLightRightBack"/>
+                <brakeLight 	node="backLightsHigh1"/>
+            </high>
+        </realLights>
+		<sharedLight linkNode="yellowRound_01_Left_a" filename="$data/shared/assets/reflectors/lizard/yellowRound_01.xml"/>
+        <sharedLight linkNode="yellowRound_01_Left_b" filename="$data/shared/assets/reflectors/lizard/yellowRound_01.xml"/>
+        <sharedLight linkNode="yellowRound_01_Left_c" filename="$data/shared/assets/reflectors/lizard/yellowRound_01.xml"/>
+		<sharedLight linkNode="yellowRound_01_Right_a" filename="$data/shared/assets/reflectors/lizard/yellowRound_01.xml"/>
+        <sharedLight linkNode="yellowRound_01_Right_b" filename="$data/shared/assets/reflectors/lizard/yellowRound_01.xml"/>
+        <sharedLight linkNode="yellowRound_01_Right_c" filename="$data/shared/assets/reflectors/lizard/yellowRound_01.xml"/>
+		<sharedLight linkNode="rearLight13_Left" filename="$data/shared/assets/lights/lizard/rearLight13_left.xml"/>
+        <sharedLight linkNode="rearLight13_Right" filename="$data/shared/assets/lights/lizard/rearLight13_right.xml"/>
+		<sharedLight linkNode="plateNumberLight01" filename="$data/shared/assets/lights/lizard/plateNumberLight01.xml" />
+        <sharedLight linkNode="plateNumberLight02" filename="$data/shared/assets/lights/lizard/plateNumberLight01.xml" />
+    </lights>
+
+    <animations>
+        <animation name="tipAnimationBack">
+            <part node="moveCol" startTime="0" endTime="14" startTrans="0 1.846 3.848" endTrans="0 1.846 -3.02" />
+        </animation>
+		
+		<animation name="tipAnimation">
+            <part node="unloadInfo" startTime="4" endTime="6"  startTrans="0 3.561 -4.843" endTrans="0 3.561 3" />
+        </animation>
+        
+		<animation name="tipAnimationBackDoor">
+            <part endRot="90 0 0" endTime="4" node="door" startRot="0 0 0" startTime="0"/>
+            <part endTime="4" endTrans="1.132 3.205 -2.570" node="deformNode" startTime="0" startTrans="1.132 3.205 -3.190"/>
+            <part endTime="4" endTrans="-1.132 3.205 -2.570" node="deformNode1" startTime="0" startTrans="-1.132 3.205 -3.190"/>
+            <part endTime="4" endTrans="1.132 3.205 -3.190" node="deformNode2" startTime="0" startTrans="1.132 3.205 -3.813"/>
+            <part endTime="4" endTrans="-1.132 3.205 -3.190" node="deformNode3" startTime="0" startTrans="-1.132 3.205 -3.813"/>
+			
+			<sound template="clackVar2"          startTime="0.01" direction="0"   volumeScale="1.0" pitchScale="1.7"/>
+            <sound template="metalOpen"          startTime="1.99" direction="0"   volumeScale="2.5" pitchScale="0.4"/>
+            <sound template="metalOpen"          startTime="1.89" direction="1"   volumeScale="2.0" pitchScale="0.8"/>
+            <sound template="metalClose"         startTime="0.01" direction="1"   volumeScale="3.0" pitchScale="0.3"/>
+            <sound template="metalOpen"          startTime="0.01" direction="-1"  volumeScale="2.5" pitchScale="0.5"/>
+            <sound template="metalClose"         startTime="0.01" direction="-1"  volumeScale="2.0" pitchScale="1.1"/>
+            <sound template="latchSmall"         startTime="0.01" direction="-1"  volumeScale="0.1" pitchScale="0.6"/>
+            <sound template="hydraulicLayerTone" startTime="0.01" endTime="1.99"  volumeScale="1.5" pitchScale="0.5" direction="1"/>
+            <sound template="hydraulicLayerTone" startTime="0.01" endTime="1.99"  volumeScale="0.5" pitchScale="0.8" direction="-1"/>
+            <sound template="cylinderPunch"      startTime="0.01" direction="-1"/>
+        </animation>
+    </animations>
+
+    <cylindered>
+        <movingTools>
+            <movingTool node="frontDoor" playSound="true">
+                <controls axis="AXIS_DOOR" invertAxis="true" iconName="TOP_DOOR_ROTATE"/>
+                <rotation rotSpeed="50" rotAcceleration="160" rotMax="90" rotMin="0" rotationAxis="1"/>
+                <dependentPart node="frontDoorHydr"/>
+            </movingTool>
+            <movingTool node="door" playSound="true">
+                <dependentPart node="doorHydr"/>
+            </movingTool>
+        </movingTools>
+        <movingParts>
+            <movingPart node="frontDoorHydr" referencePoint="frontDoorHydrRef" referenceFrame="doorHydrFrame">
+                <translatingPart node="frontDoorHydrPunch"/>
+            </movingPart>
+            <movingPart node="doorHydr" referencePoint="doorHydrRef" referenceFrame="frontDoorHydrFrame">
+                <translatingPart node="doorHydrPunch"/>
+            </movingPart>
+        </movingParts>
+        <sounds>
+            <actionSound template="hydraulicLayerTone" pitchScale="0.8" volumeScale="0.5" linkNode="frontDoorHydr" actionNames="TRANSLATING_POS TRANSLATING_NEG" nodes="frontDoorHydr" fadeIn="0.1" fadeOut="0.01" />
+            <actionSound template="sheetImp01"         pitchScale="0.3" volumeScale="1"   linkNode="frontDoor"          actionNames="TOOL_MOVE_END_POS_LIMIT"         nodes="frontDoor"/>
+            <actionSound template="clackVar6"          pitchScale="1"   volumeScale="1"   linkNode="frontDoor"          actionNames="TOOL_MOVE_END_POS_LIMIT"         nodes="frontDoor"/>
+            <actionSound template="clackVar6"          pitchScale="1"   volumeScale="1"   linkNode="frontDoor"          actionNames="TOOL_MOVE_END_NEG_LIMIT"         nodes="frontDoor"/>
+            <actionSound template="cylinderPunch"      pitchScale="1"   volumeScale="0.2" linkNode="frontDoor"          actionNames="TOOL_MOVE_END_NEG_LIMIT"         nodes="frontDoor"/>
+            <actionSound template="sheetImp01"         pitchScale="0.4" volumeScale="0.5" linkNode="frontDoor"          actionNames="TOOL_MOVE_END_NEG_LIMIT"         nodes="frontDoor"/>
+        </sounds>
+    </cylindered>
+
+    <fillUnit>
+        <fillUnitConfigurations>
+            <fillUnitConfiguration>
+                <fillUnits>
+                    <fillUnit shopDisplayUnit="CUBICMETER" fillTypeCategories="SILAGETRAILER" capacity="48000" allowAILoading="true">
+                        <exactFillRootNode node="exactFillRootNode"/>
+                        <autoAimTargetNode node="fillAutoAimTargetNode" startZ="2.2" endZ="-4.0" invert="false" startPercentage="25"/>
+                    </fillUnit>
+                </fillUnits>
+            </fillUnitConfiguration>
+        </fillUnitConfigurations>
+    </fillUnit>
+
+    <fillVolume>
+        <fillVolumeConfigurations>
+            <fillVolumeConfiguration>
+                <volumes>
+                    <volume node="fillVolume" fillUnitIndex="1" maxDelta="0.23" maxAllowedHeapAngle="18"/>
+                </volumes>
+            </fillVolumeConfiguration>
+        </fillVolumeConfigurations>
+        
+		<unloadInfos>
+            <unloadInfo>
+                <node node="node1" width="1.0" length="2.6" minHeight="0.7" priority="2"/>
+                <node node="node2" width="1.0" length="2.6" minHeight="0.7" priority="2"/>
+                <node node="node3" width="1.0" length="8.6"/>
+                <node node="node4" width="1.0" length="8.6"/>
+            </unloadInfo>
+        </unloadInfos>
+        
+		<heightNodes>
+            <heightNode>
+                <refNode node="node1"/>
+                <refNode node="node2"/>
+                <refNode node="node3"/>
+                <refNode node="node4"/>
+                <node node="effectParticleBack" baseScale="1 0.1 1" scaleAxis="0 0.5 0"/>
+            </heightNode>
+        </heightNodes>
+    </fillVolume>
+	
+	<dischargeable>
+        <dischargeNode node="dischargeNode" emptySpeed="4028" fillUnitIndex="1" unloadInfoIndex="1" allowAIDischarge="true">
+            <info width="2.5" length="0.5" />
+            <effects>
+                <effectNode effectClass="TipEffect">
+                    <effectNode effectNode="effectParticleBack" materialType="unloadingParticle" worldSpace="false" effectClass="ParticleEffect" delay="0" stopTime="0"/>
+                </effectNode>
+                <effectNode effectNode="effectSmokeBack" materialType="unloadingSmoke"  fadeTime="0.5" />
+            </effects>
+            <dischargeStateSound template="dischargeLoop" fadeIn="0.3" fadeOut="1">
+                 <volume indoor="0.1" outdoor="0.7"/>
+            </dischargeStateSound>
+        </dischargeNode>
+    </dischargeable>
+
+    <hookLiftContainer tiltContainerOnDischarge="false"/>
+
+    <trailer>
+        <trailerConfigurations>
+            <trailerConfiguration name="$l10n_configuration_valueDefault" price="0">
+                <trailer>
+                    <tipSide name="$l10n_info_tipSideBack" dischargeNodeIndex="1">
+                        <animation name="tipAnimationBack" speedScale="1.0" startTipTime="0.2"/>
+                        <doorAnimation name="tipAnimationBackDoor" speedScale="1.0" startTipTime="0"/>
+                        <animationNodes>
+                            <animationNode node="chains" shaderParameterName="scrollPosition" scrollSpeed="0.0048" scrollLength="7.933"/>
+                            <animationNode node="chain" shaderParameterName="offsetUV" shaderComponentScale="1 0 0 0" rotSpeed="12" rotAxis="1"/>
+                        </animationNodes>
+                    </tipSide>
+                </trailer>
+            </trailerConfiguration>
+        </trailerConfigurations>
+    </trailer>
+
+    <foliageBending>
+        <bendingNode minX="-1.35" maxX="1.35" minZ="-3.9" maxZ="4.1" yOffset="0.65"/>
+    </foliageBending>
+
+    <baseMaterial>
+        <material name="containerChaff_mat" baseNode="container_vis">
+            <shaderParameter name="colorMat2" value="BERGMANN_GREEN1"/>
+        </material>
+    </baseMaterial>
+	
+	<baseMaterialConfigurations price="50" useDefaultColors="true" defaultColorIndex="0">
+        <baseMaterialConfiguration name="$l10n_ui_color_BERGMANNGREEN1" 	color="BERGMANN_GREEN1"/>
+		<baseMaterialConfiguration name="$l10n_ui_color_MATTE_ITRUNNER_RED1" 		color="ITRUNNER_RED1"		material="1" price="250"/>
+		<baseMaterialConfiguration name="$l10n_ui_color_MATTE_ITRUNNER_RED2" 		color="ITRUNNER_RED2" 		material="1" price="250"/>
+		<baseMaterialConfiguration name="$l10n_ui_color_MATTE_ITRUNNER_BROWN_1" 	color="ITRUNNER_BROWN_1"	material="1" price="250"/>
+		<baseMaterialConfiguration name="$l10n_ui_color_MATTE_ITRUNNER_BLUE1" 		color="ITRUNNER_BLUE1" 		material="1" price="250"/>
+		<baseMaterialConfiguration name="$l10n_ui_color_MATTE_ITRUNNER_BLUE_1" 		color="ITRUNNER_BLUE_1" 	material="1" price="250"/>
+		<baseMaterialConfiguration name="$l10n_ui_color_MATTE_ITRUNNER_GREEN1" 		color="ITRUNNER_GREEN1" 	material="1" price="250"/>
+		<baseMaterialConfiguration name="$l10n_ui_color_MATTE_ITRUNNER_GREEN2" 		color="ITRUNNER_GREEN2" 	material="1" price="250"/>
+		<baseMaterialConfiguration name="$l10n_ui_color_MATTE_ITRUNNER_GREEN3" 		color="ITRUNNER_GREEN3" 	material="1" price="250"/>
+		<baseMaterialConfiguration name="$l10n_ui_color_MATTE_ITRUNNER_GREEN4" 		color="ITRUNNER_GREEN4" 	material="1" price="250"/>
+		<baseMaterialConfiguration name="$l10n_ui_color_MATTE_ITRUNNER_GREEN5" 		color="ITRUNNER_GREEN5" 	material="1" price="250"/>
+		<baseMaterialConfiguration name="$l10n_ui_color_MATTE_ITRUNNER_WHITE1" 		color="ITRUNNER_WHITE1" 	material="1" price="250"/>
+		<baseMaterialConfiguration name="$l10n_ui_color_MATTE_ITRUNNER_YELLOW1" 	color="ITRUNNER_YELLOW1"	material="1" price="250"/>			
+        <material name="containerChaff_mat" shaderParameter="colorMat2" />
+    </baseMaterialConfigurations>
+
+    <wearable wearDuration="480" workMultiplier="5" fieldMultiplier="2"/>
+    <washable dirtDuration="90" washDuration="1" workMultiplier="3" fieldMultiplier="2"/>
+	
+    <i3dMappings>
+        <i3dMapping id="containerChaff_main_component1" node="0>"/>
+        <i3dMapping id="wheelLeft" 						node="0>0"/>
+        <i3dMapping id="wheelRight" 					node="0>1"/>
+        <i3dMapping id="attacherJoint" 					node="0>2"/>
+        <i3dMapping id="yellowRound_01_Left_a" 			node="0>3|0"/>
+        <i3dMapping id="yellowRound_01_Left_b" 			node="0>3|1"/>
+        <i3dMapping id="yellowRound_01_Left_c" 			node="0>3|2"/>
+        <i3dMapping id="yellowRound_01_Right_a" 		node="0>3|3"/>
+        <i3dMapping id="yellowRound_01_Right_b" 		node="0>3|4"/>
+        <i3dMapping id="yellowRound_01_Right_c" 		node="0>3|5"/>
+        <i3dMapping id="rearLight13_Left" 				node="0>3|6"/>
+        <i3dMapping id="rearLight13_Right" 				node="0>3|7"/>
+		<i3dMapping id="plateNumberLight01"	 			node="0>3|8" />
+        <i3dMapping id="plateNumberLight02" 			node="0>3|9" />
+        <i3dMapping id="container_vis" 					node="0>4"/>
+        <i3dMapping id="frontDoor" 						node="0>4|0"/>
+        <i3dMapping id="frontDoorHydrRef" 				node="0>4|0|0"/>
+        <i3dMapping id="frontDoorHydr" 					node="0>4|1"/>
+        <i3dMapping id="frontDoorHydrPunch" 			node="0>4|1|0"/>
+        <i3dMapping id="door" 							node="0>4|2"/>
+        <i3dMapping id="doorHydrRef" 					node="0>4|2|0"/>
+        <i3dMapping id="doorHydr" 						node="0>4|3"/>
+        <i3dMapping id="doorHydrPunch" 					node="0>4|3|0"/>
+        <i3dMapping id="exactFillRootNode" 				node="0>4|5|0"/>
+		<i3dMapping id="fillAutoAimTargetNode" 			node="0>4|5|1"/>
+		<i3dMapping id="fillVolume" 					node="0>4|5|2"/>
+		<i3dMapping id="unloadInfo" 					node="0>4|5|3"/>
+		<i3dMapping id="fillVolumeDeformNodes" 			node="0>4|5|4"/>
+		<i3dMapping id="deformNode" 					node="0>4|5|4|0"/>
+        <i3dMapping id="deformNode1" 					node="0>4|5|4|1"/>
+        <i3dMapping id="deformNode2" 					node="0>4|5|4|2"/>
+        <i3dMapping id="deformNode3" 					node="0>4|5|4|3"/>
+		<i3dMapping id="fillVolumeHeightNodes" 			node="0>4|5|5"/>
+        <i3dMapping id="node1" 							node="0>4|5|5|0"/>
+        <i3dMapping id="node2" 							node="0>4|5|5|1"/>
+        <i3dMapping id="node3" 							node="0>4|5|5|2"/>
+        <i3dMapping id="node4" 							node="0>4|5|5|3"/>
+        <i3dMapping id="dischargeNode" 					node="0>4|6" />
+        <i3dMapping id="effectNodesBack" 				node="0>4|7|0|0" />
+        <i3dMapping id="effectSmokeBack" 				node="0>4|7|0|0|0" />
+        <i3dMapping id="particleNodesBack" 				node="0>4|7|0|1" />
+        <i3dMapping id="effectParticleBack" 			node="0>4|7|0|1|0" />
+        <i3dMapping id="doorHydrFrame" 					node="0>4|8"/>
+        <i3dMapping id="frontDoorHydrFrame" 			node="0>4|9"/>        
+        <i3dMapping id="chain" 							node="0>4|10"/>
+        <i3dMapping id="chains" 						node="0>4|11"/>
+        <i3dMapping id="moveCol" 						node="0>4|12"/>
+		<i3dMapping id="licensePlateNodeBack" 			node="0>4|15"/>        
+        <i3dMapping id="turnLightLeftBack" 				node="0>5|0|0|1"/>
+        <i3dMapping id="turnLightRightBack" 			node="0>5|0|1|1"/>
+		<i3dMapping id="backLightsHigh1" 				node="0>5|1|0"/>
+		<i3dMapping id="licensePlateLightHigh" 			node="0>5|1|1" />
+    </i3dMappings>
+</vehicle>
