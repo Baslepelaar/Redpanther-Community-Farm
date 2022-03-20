@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="containerWood" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="9.0.2"/>
+  </Asset>
+
+  <Files>
+    <File fileId="2" filename="$data/shaders/vehicleShader.xml"/>
+    <File fileId="6" filename="../texturen/befaPlatform_normal.dds"/>
+    <File fileId="7" filename="../texturen/befaPlatform_specular.dds"/>
+    <File fileId="10" filename="../texturen/default_normal.dds"/>
+    <File fileId="11" filename="../texturen/gen_dirt_1.dds"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="befaPlatform_mat" materialId="4" diffuseColor="0.486275 0.486275 0.486275 1" customShaderId="2" customShaderVariation="colorMask">
+      <Normalmap fileId="6"/>
+      <Glossmap fileId="7"/>
+      <CustomParameter name="RDT" value="1 0 0 0"/>
+      <CustomParameter name="dirtColor" value="0.2 0.14 0.08 0"/>
+      <CustomParameter name="colorMat0" value="0.561 0.004 0.004 0"/>
+      <CustomParameter name="colorMat1" value="1 0.1 0.1 1"/>
+      <CustomParameter name="colorMat2" value="0.1 1 0.1 1"/>
+      <CustomParameter name="colorMat3" value="0.1 0.1 1 1"/>
+      <CustomParameter name="colorMat4" value="1 1 0.1 1"/>
+      <CustomParameter name="colorMat5" value="0.05 0.05 0.05 1"/>
+      <CustomParameter name="colorMat6" value="1 0.1 1 1"/>
+      <CustomParameter name="colorMat7" value="0.1 1 1 1"/>
+    </Material>
+    <Material name="befaPlatform_mat" materialId="5" diffuseColor="0.486275 0.486275 0.486275 1" customShaderId="2" customShaderVariation="colorMask">
+      <Normalmap fileId="6"/>
+      <Glossmap fileId="7"/>
+      <CustomParameter name="RDT" value="1 1 0 0"/>
+      <CustomParameter name="dirtColor" value="0.2 0.14 0.08 0"/>
+      <CustomParameter name="colorMat0" value="0.561 0.004 0.004 1"/>
+      <CustomParameter name="colorMat1" value="1 0.198 0.028 1"/>
+      <CustomParameter name="colorMat2" value="0.1 1 0.1 1"/>
+      <CustomParameter name="colorMat3" value="0.1 0.1 1 1"/>
+      <CustomParameter name="colorMat4" value="1 1 0.1 1"/>
+      <CustomParameter name="colorMat5" value="0.05 0.05 0.05 1"/>
+      <CustomParameter name="colorMat6" value="1 0.1 1 1"/>
+      <CustomParameter name="colorMat7" value="0.1 1 1 1"/>
+    </Material>
+    <Material name="default" materialId="6" diffuseColor="0.494118 0.494118 0.494118 1" customShaderId="2" customShaderVariation="colorMask">
+      <Normalmap fileId="6"/>
+      <Glossmap fileId="7"/>
+      <CustomParameter name="RDT" value="1 1 0 0"/>
+      <CustomParameter name="dirtColor" value="0.2 0.14 0.08 0"/>
+      <CustomParameter name="colorMat0" value="0.561 0.004 0.004 0"/>
+      <CustomParameter name="colorMat1" value="1 0.198 0.028 1"/>
+      <CustomParameter name="colorMat2" value="0.1 1 0.1 1"/>
+      <CustomParameter name="colorMat3" value="0.1 0.1 1 1"/>
+      <CustomParameter name="colorMat4" value="1 1 0.1 1"/>
+      <CustomParameter name="colorMat5" value="0.05 0.05 0.05 1"/>
+      <CustomParameter name="colorMat6" value="1 0.1 1 1"/>
+      <CustomParameter name="colorMat7" value="0.1 1 1 1"/>
+    </Material>
+    <Material name="lambert1" materialId="7" diffuseColor="0.494118 0.494118 0.494118 1">
+    </Material>
+    <Material name="lambert1" materialId="8" diffuseColor="0.494118 0.494118 0.494118 1" customShaderId="2">
+      <CustomParameter name="RDT" value="1 1 0 0"/>
+      <CustomParameter name="dirtColor" value="0.2 0.14 0.08 0"/>
+    </Material>
+    <Material name="lambert1" materialId="9" diffuseColor="0.494118 0.494118 0.494118 1" customShaderId="2" customShaderVariation="colorMask">
+      <Normalmap fileId="10"/>
+      <Glossmap fileId="11"/>
+      <CustomParameter name="RDT" value="0 0.08 0 0"/>
+      <CustomParameter name="dirtColor" value="0.2 0.14 0.08 0"/>
+      <CustomParameter name="colorMat0" value="0.02 0.02 0.02 6"/>
+      <CustomParameter name="colorMat1" value="0.02 0.02 0.02 6"/>
+      <CustomParameter name="colorMat2" value="0.1 1 0.1 1"/>
+      <CustomParameter name="colorMat3" value="0.1 0.1 1 1"/>
+      <CustomParameter name="colorMat4" value="1 1 0.1 1"/>
+      <CustomParameter name="colorMat5" value="0.05 0.05 0.05 1"/>
+      <CustomParameter name="colorMat6" value="1 0.1 1 1"/>
+      <CustomParameter name="colorMat7" value="0.1 1 1 1"/>
+    </Material>
+    <Material name="UnnamedMaterial" materialId="10" diffuseColor="1 1 1 1">
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="containerWood.i3d.shapes">
+  </Shapes>
+
+
+  <Dynamics>
+  </Dynamics>
+
+  <Scene>
+      <Shape shapeId="1" name="containerWood_main_component1" dynamic="true" compound="true" collisionMask="2105346" clipDistance="300" objectMask="65535" nodeId="31" materialIds="8" castsShadows="true" receiveShadows="true" nonRenderable="true">
+        <TransformGroup name="visuals" translation="1.7e-05 0.00187349 -0.00477763" nodeId="32">
+          <TransformGroup name="belts" nodeId="33">
+            <TransformGroup name="beltStart1" translation="1.164 0.328 2.43152" rotation="0 -90 0" nodeId="34">
+              <TransformGroup name="beltEnd6" translation="0 -1.42109e-16 2.328" nodeId="35"/>
+            </TransformGroup>
+            <TransformGroup name="beltStart2" translation="1.164 0.328 0.861888" rotation="0 -90 0" nodeId="36">
+              <TransformGroup name="beltEnd5" translation="1.13687e-15 -1.42109e-16 2.328" nodeId="37"/>
+            </TransformGroup>
+            <TransformGroup name="beltStart3" translation="1.164 0.328 -1.36732" rotation="0 -90 0" nodeId="38">
+              <TransformGroup name="beltEnd4" translation="0 -1.42109e-16 2.328" nodeId="39"/>
+            </TransformGroup>
+            <TransformGroup name="beltStart4" translation="1.164 0.328 -3.05567" rotation="0 -90 0" nodeId="40">
+              <TransformGroup name="beltEnd3" translation="-1.13687e-15 -1.42109e-16 2.328" nodeId="41"/>
+            </TransformGroup>
+            <Shape shapeId="2" name="beltActivationTrigger" translation="0 0.88 5.22371" visibility="false" kinematic="true" trigger="true" collisionMask="1048576" nodeId="42" materialIds="7" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          </TransformGroup>
+          <TransformGroup name="collision" translation="0.00151882 0.489805 0.656714" nodeId="43">
+            <Shape shapeId="3" name="colPart1" translation="0 -0.473785 -0.74895" compoundChild="true" collisionMask="8397058" linearDamping="0.5" angularDamping="0.5" density="0.001" clipDistance="300" objectMask="65535" nodeId="44" materialIds="8" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          </TransformGroup>
+          <TransformGroup name="Wood" translation="0 -0.989481 1.48809" nodeId="45">
+            <TransformGroup name="Runge1" translation="0 0 1.02466" nodeId="46">
+              <Shape shapeId="4" name="Runge1" translation="0 1.29002 0" nodeId="47" materialIds="6">
+                <Shape shapeId="5" name="woodCol1" compoundChild="true" collisionMask="8194" density="0.001" nodeId="48" materialIds="7" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+                <Shape shapeId="6" name="woodCol2" compoundChild="true" collisionMask="8194" density="0.001" nodeId="49" materialIds="7" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+                <Shape shapeId="7" name="woodCol3" compoundChild="true" collisionMask="8194" density="0.001" nodeId="50" materialIds="7" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+              </Shape>
+              <Shape shapeId="8" name="Oesen" clipDistance="120" nodeId="51" materialIds="5"/>
+            </TransformGroup>
+            <TransformGroup name="Runge2" translation="0 0 -0.552575" nodeId="52">
+              <Shape shapeId="4" name="Runge2" translation="0 1.29002 0" nodeId="53" materialIds="6">
+                <Shape shapeId="5" name="woodCol1" compoundChild="true" collisionMask="8194" density="0.001" nodeId="54" materialIds="7" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+                <Shape shapeId="6" name="woodCol2" compoundChild="true" collisionMask="8194" density="0.001" nodeId="55" materialIds="7" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+                <Shape shapeId="7" name="woodCol3" compoundChild="true" collisionMask="8194" density="0.001" nodeId="56" materialIds="7" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+              </Shape>
+              <Shape shapeId="8" name="Oesen" clipDistance="120" nodeId="57" materialIds="5"/>
+            </TransformGroup>
+            <TransformGroup name="Runge3" translation="0 0 -2.78185" nodeId="58">
+              <Shape shapeId="4" name="Runge3" translation="0 1.29002 0" nodeId="59" materialIds="6">
+                <Shape shapeId="5" name="woodCol1" compoundChild="true" collisionMask="8194" density="0.001" nodeId="60" materialIds="7" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+                <Shape shapeId="6" name="woodCol2" compoundChild="true" collisionMask="8194" density="0.001" nodeId="61" materialIds="7" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+                <Shape shapeId="7" name="woodCol3" compoundChild="true" collisionMask="8194" density="0.001" nodeId="62" materialIds="7" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+              </Shape>
+              <Shape shapeId="8" name="Oesen" clipDistance="120" nodeId="63" materialIds="5"/>
+            </TransformGroup>
+            <TransformGroup name="Runge4" translation="0 0 -4.464" nodeId="64">
+              <Shape shapeId="4" name="Runge4" translation="0 1.29002 0" nodeId="65" materialIds="6">
+                <Shape shapeId="5" name="woodCol1" compoundChild="true" collisionMask="8194" density="0.001" nodeId="66" materialIds="7" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+                <Shape shapeId="6" name="woodCol2" compoundChild="true" collisionMask="8194" density="0.001" nodeId="67" materialIds="7" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+                <Shape shapeId="7" name="woodCol3" compoundChild="true" collisionMask="8194" density="0.001" nodeId="68" materialIds="7" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+              </Shape>
+              <Shape shapeId="8" name="Oesen" clipDistance="120" nodeId="69" materialIds="5"/>
+            </TransformGroup>
+            <Shape shapeId="9" name="woodColWand" translation="0 0 0.285713" compoundChild="true" collisionMask="8194" density="0.001" nodeId="70" materialIds="7" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+            <Shape shapeId="10" name="Ablage" translation="0 0.123 -0.0809932" nodeId="71" materialIds="4" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="10" name="Ablage" translation="0 0.123 -3.92329" nodeId="72" materialIds="4" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="11" name="dynamicMountTrigger" translation="0 2.73061 -1.139" visibility="false" kinematic="true" compound="true" trigger="true" collisionMask="16777216" nodeId="73" materialIds="10" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+            <Shape shapeId="10" name="Ablage" translation="0 0.123 -2.08022" nodeId="74" materialIds="4" castsShadows="true" receiveShadows="true"/>
+          </TransformGroup>
+          <Shape shapeId="12" name="Stirnwand" translation="0.018548 0.0857458 3.86677" nodeId="75" materialIds="4" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="13" name="Stirnwand_01" translation="0 -0.0942476 -0.181932" scale="1 1.32922 0.572934" nodeId="76" materialIds="4" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="14" name="Aluplatte_klein" translation="0 0.003 -0.233369" scale="1.285 1 1" nodeId="77" materialIds="4" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="14" name="Aluplatte_klein" translation="0 0.003 -1.3206" scale="1.285 1 1" nodeId="78" materialIds="4" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="14" name="Aluplatte_klein" translation="0 0.003 -2.4183" scale="1.285 1 1" nodeId="79" materialIds="4" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="14" name="Aluplatte_klein" translation="0 0.003 -3.51621" scale="1.285 1 1" nodeId="80" materialIds="4" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="14" name="Aluplatte_klein" translation="0 0.003 -4.59172" scale="1.285 1 1" nodeId="81" materialIds="4" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="14" name="Aluplatte_klein" translation="0 0.000496678 -5.24102" scale="1.285 1 1" nodeId="82" materialIds="4" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="14" name="Aluplatte_klein" translation="0 0.003 -6.0195" scale="1.285 1 1" nodeId="83" materialIds="4" castsShadows="true" receiveShadows="true"/>
+          </Shape>
+        </TransformGroup>
+        <TransformGroup name="HKLchassi" translation="3.33333e-07 0.0859767 2.138" nodeId="84">
+          <Shape shapeId="15" name="HKLchassi_vis" translation="-3.33333e-07 -0.0859767 -2.0948" nodeId="85" materialIds="9" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="16" name="framePlates" translation="-3.33333e-07 -0.0859767 1.18261" scale="0.995476 1 1" visibility="false" nodeId="86" materialIds="9" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="17" name="supportBeams" translation="6.66667e-07 0.171953 0.912192" rotation="-0.001 -0 0" scale="1.81518 1 1" visibility="false" nodeId="87" materialIds="9" castsShadows="true" receiveShadows="true"/>
+          <TransformGroup name="inputAttacher" translation="-9.15864e-08 1.54954 1.99775" rotation="0 90 0" clipDistance="300" nodeId="88"/>
+          <TransformGroup name="wheels" translation="0 -0.0933449 -2.11016" clipDistance="300" nodeId="89">
+            <TransformGroup name="Axle_1" translation="0 0.09 -3.265" nodeId="90">
+              <TransformGroup name="wheelLeft" translation="0.916 0 0" nodeId="91"/>
+              <TransformGroup name="wheelRight" translation="-0.916 0 0" nodeId="92"/>
+            </TransformGroup>
+          </TransformGroup>
+          <Shape shapeId="18" name="frontArmCol" translation="0 0.0406422 -2.10164" compoundChild="true" collisionMask="8194" density="0.01" clipDistance="300" nodeId="93" materialIds="7" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          <Shape shapeId="19" name="chassiCol" translation="0 -0.0869334 -2.08355" compoundChild="true" collisionMask="8194" density="0.01" clipDistance="300" nodeId="94" materialIds="7" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+        </TransformGroup>
+        <TransformGroup name="autoLoadWood" translation="-0.203891 0 1.2155" nodeId="95"/>
+        <TransformGroup name="transform" translation="-0.422817 3.507 2.49771" nodeId="96"/>
+        <Camera name="persp" translation="-5.87129 2.55993 2.55238" rotation="-4.81368 -72.651 -1.34212e-06" visibility="false" nodeId="97" fov="60" nearClip="0.1" farClip="10000" orthographicHeight="1"/>
+      </Shape>
+  </Scene>
+
+</i3D>
